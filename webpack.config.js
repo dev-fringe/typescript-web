@@ -9,8 +9,18 @@ const configs = module.exports = createDefaultConfig({ //for ie11
     template: ({ assets, entries, legacyEntries, variation }) => `
     <!doctype html>
     <html manifest="/cache.manifest">
+    <style>
+		body {
+			font: 80% arial, helvetica, sans-serif;
+			margin: 0;
+    }
+		h1, h2 {
+			margin: 0;
+    }
+    </style>            
       <body> 
         <my-header></my-header>
+        <my-navigation></my-navigation>
         <simple-greeting name="Everyone"></simple-greeting>
         <my-footer></my-footer>  
       </body>
