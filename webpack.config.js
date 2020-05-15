@@ -4,20 +4,20 @@ const createDefaultConfig = require('@open-wc/building-webpack/modern-and-legacy
 
 const configs = module.exports = createDefaultConfig({ //for ie11
 //  input: resolve.resolve(__dirname, '/index.html'),
-  input: resolve.resolve(__dirname, './index.ts'),
+  input: resolve.resolve(__dirname, './App.ts'),
   webpackIndexHTMLPlugin: {
     template: ({ assets, entries, legacyEntries, variation }) => `
     <!doctype html>
     <html manifest="/cache.manifest">
-    <style>
-		body {
-			font: 80% arial, helvetica, sans-serif;
-			margin: 0;
-    }
-		h1, h2 {
-			margin: 0;
-    }
-    </style>            
+      <style>
+      body {
+        font: 80% arial, helvetica, sans-serif;
+        margin: 0;
+      }
+      h1, h2 {
+        margin: 0;
+      }
+      </style>            
       <body> 
         <my-header></my-header>
         <my-navigation></my-navigation>
