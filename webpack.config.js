@@ -26,10 +26,12 @@ module.exports = configs.map(config =>
           },
           module: {
             rules: [{ test: /\.ts$/, loader: "ts-loader" }]              
-          },
-          output: {
-            filename: 'bundle.js',
-            path: resolve.resolve(__dirname, 'dist'),
-          }                  
+          }
+          // 아래 코드 쓰면 ie에선 안됨.
+          // ,
+          // output: {
+          //   filename: 'bundle.js',
+          //   path: resolve.resolve(__dirname, 'dist'),
+          // }                  
     }),
   );
