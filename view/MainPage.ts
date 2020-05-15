@@ -1,7 +1,14 @@
-import { html } from 'lit-html';
-export function MainPage() {
-  return html`
-    <h1 style="color:blue;">This is a heading11</h1>
-    <p style="color:red;">This is a paragraph232.</p>  
-  `;
+import { LitElement, html, property, customElement } from 'lit-element';
+//import './MyHeader.js';
+
+@customElement('simple-greeting')
+export class SimpleGreeting extends LitElement {
+  @property() name = 'World';
+
+  render() {
+    return html`
+      <p>Hello, ${this.name}!</p>
+      `;
+  }
 }
+

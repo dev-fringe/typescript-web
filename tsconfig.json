@@ -7,7 +7,9 @@
     "moduleResolution": "node",
     "target": "esnext",
     "allowJs": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "importHelpers": true
   }
   ,"include": ["view/**/*"]    
 }
