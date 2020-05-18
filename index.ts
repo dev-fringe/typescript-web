@@ -9,7 +9,7 @@ const outlet = document.querySelector("main");
 export const router = new Router(outlet);
 router.setRoutes([
   {
-    path: "/index",
+    path: "/",
     component: "hello-view"
   },
   { path: "/hello/:name", component: "hello-view" },

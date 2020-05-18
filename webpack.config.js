@@ -24,6 +24,12 @@ const configs = module.exports = createDefaultConfig({ //for ie11
       }
       </style>            
       <body> 
+      <header>
+        <nav>
+          <li><a href="/">Home</a></li>
+          <li><a href="/hello/world">Hello {name}</a></li>
+        </nav>
+      </header>      
         <main></main>
       </body>
     </html>
