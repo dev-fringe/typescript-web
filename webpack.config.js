@@ -1,10 +1,9 @@
 const resolve = require('path');
 const merge = require('webpack-merge');
 const createDefaultConfig = require('@open-wc/building-webpack/modern-and-legacy-config.js');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const configs = module.exports = createDefaultConfig({ //for ie11
-  input: resolve.resolve(__dirname, './index.html')
+  input: [resolve.resolve(__dirname, './index.html')]
 });
 
 module.exports = configs.map(config =>

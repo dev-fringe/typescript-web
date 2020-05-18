@@ -1,0 +1,19 @@
+
+<?xml version="1.0"?>
+<project name="WebApp Build" default="npm-install" basedir=".">
+    <target name="npm-install">
+            <exec dir="./" executable="cmd.exe" output="npm-install.txt">
+            <arg line="/c npm install"/>
+            </exec>
+    </target>
+    <target name="webpack-build">
+        <exec dir="./" executable="cmd.exe" output="webpack-build.txt">
+        <arg line="/c webpack"/>
+        </exec>
+    </target>
+    <target name="webpack-web-server">
+        <exec dir="./" executable="cmd.exe" output="webpack-web-server.txt">
+        <arg line="/c webpack-dev-server"/>
+        </exec>
+    </target>
+</project>

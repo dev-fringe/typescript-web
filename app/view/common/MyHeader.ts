@@ -1,7 +1,8 @@
-import { LitElement, css, html, customElement } from 'lit-element';
+import { LitElement, css, html, customElement, property } from 'lit-element';
 
 @customElement('my-header')
 export class MyHeader extends LitElement {
+  @property( { type : String }  ) name = 'Test';
   static get styles() {
     return css`
       div { background: #ccc; }
@@ -11,7 +12,7 @@ export class MyHeader extends LitElement {
   render() {
     return html`
       <div>
-        <h1>Header</h1>
+        <h1> ${this.name} Header</h1>
       </div>
     `;
   }
