@@ -1,19 +1,25 @@
 {
   "compilerOptions": {
-    "noImplicitAny": false,
+    // "noImplicitAny": false,
     "experimentalDecorators": true,
     "sourceMap": true,
+    "lib": ["dom", "esnext"],    
     "module": "esnext",
     "moduleResolution": "node",
-    "target": "esnext",
+    "target": "es6",
     "allowJs": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
     "importHelpers": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "noImplicitAny": false,
     "paths": {
-      "@view/*": ["view/*"],
+      "@view/*": ["app/view/*"],
+      "@root/*": ["./*"],
+      "@app/*": ["/app*"]
     }
   }
-  ,"include": ["app/**/*"]    
+  ,"include": ["app/**/*","*.ts"]    
   ,"exclude": ["node_modules"]
 }

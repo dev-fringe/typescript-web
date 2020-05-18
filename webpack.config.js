@@ -1,6 +1,7 @@
 const resolve = require('path');
 const merge = require('webpack-merge');
 const createDefaultConfig = require('@open-wc/building-webpack/modern-and-legacy-config.js');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const configs = module.exports = createDefaultConfig({ //for ie11
 //  input: resolve.resolve(__dirname, '/index.html'),
@@ -13,17 +14,10 @@ const configs = module.exports = createDefaultConfig({ //for ie11
       <meta charset="utf-8">    
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />      
-    </head>
-      <style>
-      body {
-        font: 80% arial, helvetica, sans-serif;
-        margin: 0;
-      }
-      h1, h2 {
-        margin: 0;
-      }
-      </style>            
+      <link rel="icon" href="data:;base64,iVBORw0KGgo=">      
+    </head>          
       <body> 
+      <my-header></my-header>      
       <header>
         <nav>
           <li><a href="/">Home</a></li>
@@ -31,6 +25,7 @@ const configs = module.exports = createDefaultConfig({ //for ie11
         </nav>
       </header>      
         <main></main>
+        <my-footer></my-footer>            
       </body>
     </html>
     `,
@@ -42,14 +37,20 @@ module.exports = configs.map(config =>
           resolve: {
             extensions: [".ts", ".js"],
             alias: {
-              "@view": resolve.resolve("./app/view")
+              "@view": resolve.resolve("./app/view"),
+              "@root": resolve.resolve("./"),
+              "@app": resolve.resolve("./app")
             }            
           },
           module: {
             rules: [
               { 
                 test: /\.ts$/, loader: "ts-loader"            
-              }
+              },
+              {
+                test: /\.css$/,
+                use: ['css-loader'],
+              },              
             ]              
           }
           // 아래 코드 쓰면 ie에선 안됨.
