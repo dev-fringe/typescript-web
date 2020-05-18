@@ -9,7 +9,11 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
-    "importHelpers": true
+    "importHelpers": true,
+    "paths": {
+      "@view/*": ["view/*"],
+    }
   }
-  ,"include": ["view/**/*"]    
+  ,"include": ["app/**/*"]    
+  ,"exclude": ["node_modules"]
 }
