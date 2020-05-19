@@ -1,6 +1,6 @@
 import { LitElement, css, html, customElement } from 'lit-element';
 
-@customElement('my-footer')
+@customElement('app-footer')
 export class MyFooter extends LitElement {
   static get styles() {
     return css`

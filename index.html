@@ -4,18 +4,14 @@
   <meta charset="utf-8">    
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />      
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">      
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">     
+  <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.6.1/fabric.min.css">
+  <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.6.1/fabric.components.min.css">   
 </head>          
   <body> 
-  <my-header></my-header>      
-  <header>
-    <nav>
-      <li><a href="/">Home</a></li>
-      <li><a href="/hello/world">Hello {name}</a></li>
-    </nav>
-  </header>      
-    <main></main>
-    <my-footer></my-footer>            
-    <script type="module" src="app.ts"></script>
+    <app-header></app-header>    
+    <app-main></app-main>
+    <app-footer></app-footer>            
+    <script type="module" src="main.ts"></script>
   </body>
 </html>
