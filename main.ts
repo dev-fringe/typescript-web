@@ -1,6 +1,6 @@
 import { Router } from "@vaadin/router";
 
-import "reset-css";
+export {} from "reset-css";
 import "@view/HomeView";
 import "@view/HelloView";
 import "@view/common/NotFound";
