@@ -16,7 +16,7 @@ class HelloView extends LitElement {
   constructor() {
       super()     
   }
-  
+
   render() {
     const shadowRoot = this.attachShadow({mode: 'open'});
     jquery.ajax({
@@ -25,7 +25,7 @@ class HelloView extends LitElement {
       success: function(res) {
         shadowRoot.innerHTML = res;
       }
-    });// have some bug ????
+    });// have some bug 이게 최선인가?
   //  return html`<slot name="thing"></slot>`
   }
 }
