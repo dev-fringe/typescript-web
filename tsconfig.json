@@ -18,7 +18,10 @@
       "@view/*": ["app/view/*"],
       "@root/*": ["./*"],
       "@app/*": ["/app*"]
-    }
+    },
+    "types": [
+      "jquery"
+    ]
   }
   ,"include": ["app/**/*","*.ts"]    
   ,"exclude": ["node_modules"]

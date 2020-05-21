@@ -1,8 +1,9 @@
 import { LitElement, html, customElement, property } from 'lit-element';
+import { router } from "@root/main";
 
 @customElement("fetching-data-view")
 class FetchingDataView extends LitElement {
-    @property({ type: Object  }) response;
+    @property() private response: any;
 
     constructor() {
         super();

@@ -1,14 +1,23 @@
 import { LitElement, css, html, customElement, property } from 'lit-element';
+import { router } from "@root/main";
+
 
 @customElement('app-header')
 export class MyHeader extends LitElement {
-  @property( { type : String }  ) name = 'Test';
+  @property() private loc  = router;
+  @property( { type : String }  ) name = 'Test'
   // static get styles() {
   //   return css`
   //     div { background: #ccc; }
   //   `;
   // }
-
+  onBeforeEnter(location, commands) {
+    //if (!this.isAuthorized) {
+      console.log('tee')
+      return commands.redirect('/login')
+      //this.loc.render.
+    //}
+  }
   render() {
     return html`
       <h1 class="ms-font-su ms-fontColor-white ms-bgColor-themeDarker">Language Overrides Sample</h1>        

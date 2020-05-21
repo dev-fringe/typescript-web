@@ -3,11 +3,11 @@ import { router } from "@root/main";
 
 @customElement("hello-view")
 class HelloView2 extends LitElement {
-  @property({ type: Object }) location = router.location;
-  @property() myArray = ['an','array','of','test','data'];
-  @property() myBool = true;
-  @property({type: Number}) count = 0;
-  @property({type: Object}) items ;
+  @property() private location  = router.location;
+  @property() private myArray = ['an','array','of','test','data'];
+  @property() private myBool : Object= true;
+  @property() private count = 0;
+  @property() private items : Object;
 
   render() {
     return html`
