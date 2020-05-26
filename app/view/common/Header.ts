@@ -18,6 +18,17 @@ export class MyHeader extends LitElement {
       // this.res = detailView2(); 
   }
 
+  createRenderRoot() {
+    jQuery.ajax({
+      url: 'http://localhost/header', 
+      cache: false,
+      success: function(res) {
+        this.attachShadow({mode: "open"}).innerHTML = res;
+      }
+     });// have some bug 이게 최선인가?      
+      return this;
+  }
+
   render() {
     const shadowRoot = this.attachShadow({mode: 'open'});
     // console.log(this.header);

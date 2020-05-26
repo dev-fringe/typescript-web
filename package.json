@@ -10,8 +10,8 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@stomp/stompjs": "^5.4.4",
     "@types/jquery": "^3.3.38",
-    "@types/jsdom": "^16.2.3",
     "@vaadin/router": "^1.7.2",
     "@webcomponents/webcomponentsjs": "^2.4.3",
     "jquery": "^3.5.1",

@@ -1,46 +1,26 @@
-import { LitElement, customElement, html, property } from "lit-element"
+import { LitElement, customElement, html, property, css } from "lit-element"
 import { unsafeHTML } from 'lit-html/directives/unsafe-html.js'
 import { until } from 'lit-html/directives/until.js'
 import { asyncAppend } from 'lit-html/directives/async-append.js'
 import { parser } from "@root/main"
 import { jQuery } from "@root/main"
 
-const detailView = () => until(fetch('http://localhost/test').then((r) => r.text()), '<span>Loading... </span>')
-const detailView2 = async () => until(fetch('http://localhost/test').then((r) => r.text()), '<span>Loading... </span>');
-
 @customElement("home-view")
 class HelloView extends LitElement {
 
-  @property() private res: any
-
-  constructor() {
-      super()
-      // fetch('http://localhost/test')
-      // .then(res => res.text())
-      // .then(text => this.res = text.valueOf());         
-      // this.res = detailView2(); 
+  static get styles() {
+    return css`
+      div { padding: 60px 15px 0; }
+    `;
   }
-
   render() {
-    const shadowRoot = this.attachShadow({mode: 'open'});
-    // let data = html`${detailView()}`;
-    // console.log(data.getTemplateElement());
-    // console.log(data.getHTML);
-    // console.log(data);
-    // console.log(data.getHTML());
-    // console.log(data.getHTML());
-    // console.log(data.getHTML());
-    // console.log(this.res);
-
-    //shadowRoot.innerHTML = this.res;
-    
     jQuery.ajax({
       url: 'http://localhost/test', 
       cache: false,
       success: function(res) {
-        shadowRoot.innerHTML = res;
-      }
-     });// have some bug 이게 최선인가?
-   return html`test`;
+         this.attachShadow({mode: 'open'}).innerHTML = '<div>1test<br>2test<br>3test<br>4test<br>5test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>res=' + res + '</div>';
+    }});    
+    // this.attachShadow({mode: 'open'}).innerHTML ='<div>1test<br>2test<br>3test<br>4test<br>5test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br></div>';
+  // return html`<div>1test<br>2test<br>3test<br>4test<br>5test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br>test<br></div>`;
   }
 }
